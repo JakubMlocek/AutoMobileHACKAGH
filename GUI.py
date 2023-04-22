@@ -14,7 +14,7 @@ class CarInfoApp(App):
     def build(self):
         # load data from json file
         try:
-            with open("car_info.json", "r") as f:
+            with open("resources/car_info.json", "r") as f:
                 data = json.load(f)
         except JSONDecodeError:
             data = {
@@ -29,7 +29,7 @@ class CarInfoApp(App):
         label_grid = GridLayout(cols=2, size_hint=(1, 10))
 
         # create image
-        image = Image(source='car.png', size_hint=(4, 12))
+        image = Image(source='resources/car.png', size_hint=(4, 12))
         main_grid.add_widget(image)
 
         # create labels and inputs for car info data
@@ -71,7 +71,7 @@ class CarInfoApp(App):
         }
 
         # save data to json file
-        with open("car_info.json", "w") as f:
+        with open("resources/car_info.json", "w") as f:
             json.dump(data, f)
 
     def create_button_grid(self, main_grid):
