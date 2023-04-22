@@ -35,6 +35,13 @@ class CarInfoApp(App):
         # create layout
         layout = GridLayout(cols=2, spacing=10, padding=40)
 
+        title_label = Label(text="AutoMobile")
+        layout.add_widget(title_label)
+
+        image = Image(source='car.png', allow_stretch=True, keep_ratio=False)
+        layout.add_widget(image)
+
+
         # create labels and inputs for car info data
         fuel_label = Label(text="Poziom paliwa:")
         fuel_input = TextInput(text=str(data["fuel"]))
