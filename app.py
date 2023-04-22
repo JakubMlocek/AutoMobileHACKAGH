@@ -71,8 +71,8 @@ class CarInfoApp(App):
         layout.add_widget(Label())  # empty label for spacing
         layout.add_widget(save_button)
 
-        mapview = MapView(zoom=11, lat=52.374, lon=4.900)
-        layout.add_widget(mapview, rows=4)
+        mapview = MapView(zoom=11, lat=52.374, lon=4.900, size_hint=(4,12))
+        layout.add_widget(mapview)
 
 
         return layout
