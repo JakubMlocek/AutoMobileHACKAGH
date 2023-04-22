@@ -5,6 +5,7 @@ from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
+from kivy.uix.popup import Popup
 from kivy.uix.button import Button
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
@@ -13,39 +14,11 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.image import Image
 from json.decoder import JSONDecodeError
+from kivy.garden.mapview import MapView
 
-class CarInfoApp(App):
-    def show_map(self):
-        try:
-            with open("car_location.json", "r") as f:
-                location_data = json.load(f)
-        except JSONDecodeError:
-            location_data = {
-                "lat": 0.0,
-                "lon": 0.0
-            }
 
-        # create map using folium
-        map = folium.Map(location=[location_data["lat"], location_data["lon"]], zoom_start=15)
 
-        # add marker for car location
-        folium.Marker(location=[location_data["lat"], location_data["lon"]], tooltip="Tu jestem!").add_to(map)
-
-        # create temporary file for map and open it in browser
-        map_file = "car_location_map.html"
-        map.save(map_file)
-        try:
-            with open("map.html", "r") as f:
-                map_html = f.read()
-        except FileNotFoundError:
-            map_html = "<h1>No map found</h1>"
-
-        # create temporary file for map and open it in browser
-        with open(map_file, "w") as f:
-            f.write(map_html)
-        webbrowser.open_new_tab(map_file)
-
-    
+class CarInfoApp(App):    
     def build(self):
         # load data from json file
         try:
@@ -91,13 +64,8 @@ class CarInfoApp(App):
         layout.add_widget(Label())  # empty label for spacing
         layout.add_widget(save_button)
 
-        # create show map button
-        show_map_button = Button(text="Pokaż mapę")
-        show_map_button.bind(on_press=lambda x: self.show_map())
-
-        # add show map button to layout
-        layout.add_widget(Label())  # empty label for spacing
-        layout.add_widget(show_map_button)
+        mapview = MapView(zoom=11, lat=52.374, lon=4.900)
+        layout.add_widget(mapview)
 
 
         return layout
