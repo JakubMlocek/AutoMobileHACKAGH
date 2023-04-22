@@ -1,6 +1,4 @@
 import json
-import folium
-import webbrowser
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
@@ -38,7 +36,7 @@ class CarInfoApp(App):
         title_label = Label(text="AutoMobile")
         layout.add_widget(title_label)
 
-        image = Image(source='car.png', allow_stretch=True, keep_ratio=False)
+        image = Image(source='car.png', allow_stretch=True, keep_ratio=False, size_hint=(4,8))
         layout.add_widget(image)
 
 
@@ -47,9 +45,9 @@ class CarInfoApp(App):
         fuel_input = TextInput(text=str(data["fuel"]), size_hint_y=None, height=50)
         location_label = Label(text="Aktualna lokalizacja:", valign='center')
         location_input = TextInput(text=str(data["location"]), size_hint_y=None, height=50)
-        oil_label = Label(text="Stan oleju:", valign='center')
+        oil_label = Label(text="Temperatura oleju:", valign='center')
         oil_input = TextInput(text=str(data["oil"]), size_hint_y=None, height=50)
-        coolant_label = Label(text="Stan płynu chłodniczego:", valign='center')
+        coolant_label = Label(text="Poziom płynu chłodniczego:", valign='center')
         coolant_input = TextInput(text=str(data["coolant"]), size_hint_y=None, height=50)
 
         # add widgets to layout
