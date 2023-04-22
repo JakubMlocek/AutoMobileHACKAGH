@@ -33,14 +33,14 @@ class CarInfoApp(App):
         main_grid.add_widget(image)
 
         # create labels and inputs for car info data
-        fuel_label = Label(text="Poziom paliwa:")
+        fuel_label = Label(text="Stan baterii:")
         fuel_input = TextInput(text=str(data["fuel"]))
         location_label = Label(text="Aktualna lokalizacja:")
         location_input = TextInput(text=str(data["location"]))
-        oil_label = Label(text="Stan oleju:")
-        oil_input = TextInput(text=str(data["oil"]))
-        coolant_label = Label(text="Stan płynu chłodniczego:")
-        coolant_input = TextInput(text=str(data["coolant"]))
+        oil_label = Label(text="Alerty:")
+        oil_input = TextInput(text=str(data["alerts"]))
+        coolant_label = Label(text="CurrentMode:")
+        coolant_input = TextInput(text=str(data["mode"]))
 
         # add widgets to layout
         label_grid.add_widget(fuel_label)
@@ -54,7 +54,7 @@ class CarInfoApp(App):
 
         main_grid.add_widget(label_grid)
 
-        mapview = MapView(zoom=11, lat=50.6394, lon=3.057, size_hint=(4, 15))
+        mapview = MapView(zoom=11, lat=50.3, lon=19.03, size_hint=(4, 15))
         main_grid.add_widget(mapview)
 
         self.create_button_grid(main_grid)
@@ -76,9 +76,9 @@ class CarInfoApp(App):
 
     def create_button_grid(self, main_grid):
         button_grid = GridLayout(cols=3, spacing=10, padding=40, size_hint=(1, 3))
-        button1 = Button(text='Przycisk', size_hint=(1, 10))
-        button2 = Button(text='Button2')
-        button3 = Button(text='Button3')
+        button1 = Button(text='LockCar', size_hint=(1, 10))
+        button2 = Button(text='KIVIMODE')
+        button3 = Button(text='Camera')
         button_grid.add_widget(button1)
         button_grid.add_widget(button2)
         button_grid.add_widget(button3)

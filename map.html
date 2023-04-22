@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_d19036aad29d4da0fd80ceb3f1515f5c {
+                #map_3f3211fcfa2f69a40511587e6fb3781f {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -39,18 +39,18 @@
 <body>
     
     
-            <div class="folium-map" id="map_d19036aad29d4da0fd80ceb3f1515f5c" ></div>
+            <div class="folium-map" id="map_3f3211fcfa2f69a40511587e6fb3781f" ></div>
         
 </body>
 <script>
     
     
-            var map_d19036aad29d4da0fd80ceb3f1515f5c = L.map(
-                "map_d19036aad29d4da0fd80ceb3f1515f5c",
+            var map_3f3211fcfa2f69a40511587e6fb3781f = L.map(
+                "map_3f3211fcfa2f69a40511587e6fb3781f",
                 {
-                    center: [52.22977, 21.01178],
+                    center: [50.2738, 19.0546],
                     crs: L.CRS.EPSG3857,
-                    zoom: 10,
+                    zoom: 12,
                     zoomControl: true,
                     preferCanvas: false,
                 }
@@ -60,31 +60,28 @@
 
         
     
-            var tile_layer_7e5461428eef7b321094c9134a30220c = L.tileLayer(
+            var tile_layer_a85af6c87d7133713747c3e545d82921 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_d19036aad29d4da0fd80ceb3f1515f5c);
+            ).addTo(map_3f3211fcfa2f69a40511587e6fb3781f);
         
     
-            var marker_d09ca0a53b6d8c6d51201f1a769834de = L.marker(
-                [52.22977, 21.01178],
+            var poly_line_b36b906ae7efaab98b8435d37218ad39 = L.polyline(
+                [[50.2608521, 19.0226036], [50.2613053, 19.0226326], [50.2639009, 19.0239171], [50.2636094, 19.0268415], [50.2627087, 19.0303491], [50.2625368, 19.0307492], [50.2620244, 19.0348175], [50.2620056, 19.0351841], [50.2619837, 19.0355011], [50.2619706, 19.0358398], [50.2619666, 19.0395972], [50.2618845, 19.0413897], [50.2622872, 19.0466552], [50.2643382, 19.0488166], [50.2651698, 19.0501065], [50.267043, 19.0544139], [50.2694547, 19.0597368], [50.2726497, 19.0670461], [50.2731741, 19.0682639], [50.2762692, 19.0755413], [50.2778146, 19.0794593], [50.2794, 19.0838288], [50.2822723, 19.0922749], [50.2836738, 19.0968969], [50.283814, 19.0973275], [50.2855566, 19.1026825], [50.2858532, 19.1036029]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_3f3211fcfa2f69a40511587e6fb3781f);
+        
+    
+            var marker_57c79b1bff60a9495f16e193180fd93c = L.marker(
+                [50.2599, 19.0228],
                 {}
-            ).addTo(map_d19036aad29d4da0fd80ceb3f1515f5c);
+            ).addTo(map_3f3211fcfa2f69a40511587e6fb3781f);
         
     
-        var popup_2bf7b2217f6d9c7698164618211c0612 = L.popup({"maxWidth": "100%"});
-
+            var icon_8ae506f5452a8db899c0b2ee5619f0a3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_57c79b1bff60a9495f16e193180fd93c.setIcon(icon_8ae506f5452a8db899c0b2ee5619f0a3);
         
-            
-                var html_988f9c06509120792c48be8b530ae89e = $(`<div id="html_988f9c06509120792c48be8b530ae89e" style="width: 100.0%; height: 100.0%;">Warsaw</div>`)[0];
-                popup_2bf7b2217f6d9c7698164618211c0612.setContent(html_988f9c06509120792c48be8b530ae89e);
-            
-        
-
-        marker_d09ca0a53b6d8c6d51201f1a769834de.bindPopup(popup_2bf7b2217f6d9c7698164618211c0612)
-        ;
-
-        
-    
 </script>
 </html>
