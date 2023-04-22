@@ -33,7 +33,7 @@ class CarInfoApp(App):
             }
 
         # create layout
-        layout = GridLayout(cols=2, spacing=10, padding=40)
+        layout = GridLayout(cols=1, spacing=1, padding=20)
 
         title_label = Label(text="AutoMobile")
         layout.add_widget(title_label)
@@ -43,14 +43,14 @@ class CarInfoApp(App):
 
 
         # create labels and inputs for car info data
-        fuel_label = Label(text="Poziom paliwa:")
-        fuel_input = TextInput(text=str(data["fuel"]))
-        location_label = Label(text="Aktualna lokalizacja:")
-        location_input = TextInput(text=str(data["location"]))
-        oil_label = Label(text="Stan oleju:")
-        oil_input = TextInput(text=str(data["oil"]))
-        coolant_label = Label(text="Stan płynu chłodniczego:")
-        coolant_input = TextInput(text=str(data["coolant"]))
+        fuel_label = Label(text="Poziom paliwa:", valign='center')
+        fuel_input = TextInput(text=str(data["fuel"]), size_hint_y=None, height=50)
+        location_label = Label(text="Aktualna lokalizacja:", valign='center')
+        location_input = TextInput(text=str(data["location"]), size_hint_y=None, height=50)
+        oil_label = Label(text="Stan oleju:", valign='center')
+        oil_input = TextInput(text=str(data["oil"]), size_hint_y=None, height=50)
+        coolant_label = Label(text="Stan płynu chłodniczego:", valign='center')
+        coolant_input = TextInput(text=str(data["coolant"]), size_hint_y=None, height=50)
 
         # add widgets to layout
         layout.add_widget(fuel_label)
@@ -72,7 +72,7 @@ class CarInfoApp(App):
         layout.add_widget(save_button)
 
         mapview = MapView(zoom=11, lat=52.374, lon=4.900)
-        layout.add_widget(mapview)
+        layout.add_widget(mapview, rows=4)
 
 
         return layout
