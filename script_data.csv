@@ -1,0 +1,2 @@
+id,air_supply_level,ari_supply_temperature,current_power,current_speed,current_state,engine_temperature,fuel,is_car_closed,is_lights_on,is_trunk_open,mac_address,max_capacity,max_speed,oil_level,open_window_level,tires_pressure,washer_pad_level
+1,,,,,,,123.0,,,,,,200,,,,
