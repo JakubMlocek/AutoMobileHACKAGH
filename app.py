@@ -1,21 +1,11 @@
 import json
-import folium
-import webbrowser
-from kivy.app import App
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.label import Label
-from kivy.uix.textinput import TextInput
-from kivy.uix.popup import Popup
-from kivy.uix.button import Button
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
-from kivy.uix.image import Image
 from json.decoder import JSONDecodeError
 from kivy.garden.mapview import MapView
-
 
 
 class CarInfoApp(App):    
@@ -33,14 +23,7 @@ class CarInfoApp(App):
             }
 
         # create layout
-        layout = GridLayout(cols=2, spacing=10, padding=40)
-
-        title_label = Label(text="AutoMobile")
-        layout.add_widget(title_label)
-
-        image = Image(source='car.png', allow_stretch=True, keep_ratio=False)
-        layout.add_widget(image)
-
+        layout = GridLayout(cols=1, spacing=10, padding=40)
 
         # create labels and inputs for car info data
         fuel_label = Label(text="Poziom paliwa:")
@@ -71,9 +54,8 @@ class CarInfoApp(App):
         layout.add_widget(Label())  # empty label for spacing
         layout.add_widget(save_button)
 
-        mapview = MapView(zoom=11, lat=52.374, lon=4.900)
+        mapview = MapView(zoom=11, lat=50.6394, lon=3.057, size_hint=(4, 12))
         layout.add_widget(mapview)
-
 
         return layout
 
