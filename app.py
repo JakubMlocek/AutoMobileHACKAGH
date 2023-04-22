@@ -6,6 +6,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from json.decoder import JSONDecodeError
 from kivy.garden.mapview import MapView
+from kivy.uix.image import Image
 
 
 class CarInfoApp(App):    
@@ -24,7 +25,11 @@ class CarInfoApp(App):
 
         # create layout
         main_grid = GridLayout(cols=1, spacing=10, padding=40)
-        label_grid = GridLayout(cols=2, size_hint=(1, 5))
+        label_grid = GridLayout(cols=2, size_hint=(1, 10))
+
+        # create image
+        image = Image(source='car.png', size_hint=(4, 12))
+        main_grid.add_widget(image)
 
         # create labels and inputs for car info data
         fuel_label = Label(text="Poziom paliwa:")
@@ -48,7 +53,7 @@ class CarInfoApp(App):
 
         main_grid.add_widget(label_grid)
 
-        mapview = MapView(zoom=11, lat=50.6394, lon=3.057, size_hint=(4, 12))
+        mapview = MapView(zoom=11, lat=50.6394, lon=3.057, size_hint=(4, 15))
         main_grid.add_widget(mapview)
 
         self.create_button_grid(main_grid)
